@@ -7,3 +7,4 @@ RUN pip install /xmrig_proxy_exporter && cp /usr/local/bin/xmrig-proxy-exporter 
 EXPOSE 9189
 
 ENTRYPOINT ["/xmrig-proxy-exporter"]
+# docker build -t don4of4/xmrig-proxy-exporter .

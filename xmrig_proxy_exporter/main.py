@@ -10,7 +10,7 @@ from .xmrig_collector import XmrigCollector
 from .xmrig_proxy_collector import XmrigProxyCollector
 
 def main():
-    parser = argparse.ArgumentParser("Xmrig (Proxy) Exporter")
+    parser = argparse.ArgumentParser("xmrig-proxy-exporter")
     # Bindings
     parser.add_argument("--port", type=int, default=9189)
     parser.add_argument("--bind_address", default="0.0.0.0")
