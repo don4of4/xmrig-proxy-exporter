@@ -4,6 +4,7 @@ import logging
 import sys
 
 import prometheus_client
+import prometheus_client.core
 from prometheus_client import start_http_server
 
 from .xmrig_collector import XmrigCollector
