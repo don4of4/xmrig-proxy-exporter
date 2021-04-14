@@ -41,16 +41,11 @@ def main():
     prometheus_client.REGISTRY.register(collector)
 
     # Setup handler
-    #handler = prometheus_client.MetricsHandler.factory(prometheus_client.REGISTRY)
+    handler = prometheus_client.MetricsHandler.factory(prometheus_client.REGISTRY)
 
-    start_http_server(args.port)
-    input()
-    
     # Bind server and start
-    #server = http.server.HTTPServer((args.bind_address, args.port), handler)
-    #server.serve_forever()
-
-
+    server = http.server.HTTPServer((args.bind_address, args.port), handler)
+    server.serve_forever()
 
 if __name__ == '__main__':
     main()

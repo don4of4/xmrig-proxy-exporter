@@ -1,4 +1,5 @@
 import prometheus_client
+import prometheus_client.core
 import requests
 
 
