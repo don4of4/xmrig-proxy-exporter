@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="xmrig-proxy-exporter",
-    version="0.1.0",
+    version="0.1.1",
     author="Don Scott",
     packages=setuptools.find_packages(),
     install_requires=[

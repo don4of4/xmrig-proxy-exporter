@@ -1,4 +1,4 @@
-import prometheus_client
+#import prometheus_client
 import prometheus_client.core
 import requests
 
@@ -24,12 +24,14 @@ class XmrigProxyCollector(object):
         
         # Select the type of data 
         if is_counter:
-            cls = prometheus_client.core.CounterMetricFamily
+            c = prometheus_client.core.CounterMetricFamily
         else:
-            cls = prometheus_client.core.GaugeMetricFamily
+            c = prometheus_client.core.GaugeMetricFamily
         
+       
         # Create the metrics
-        metric = cls(_name, _documentation or "No Documentation", labels=label_names)
+        _documentation = _documentation or "No Documentation"
+        metric = c(_name, _documentation, labels=label_names)
         metric.add_metric([str(_labels[k]) for k in label_names], _value)
         
         return metric
@@ -206,7 +208,7 @@ class XmrigProxyCollector(object):
                 #    print("{0} {1}".format(value,type(value)))
                 metrics.append(self._make_metric(
                     isCounter[num],
-                    self._prefix + "_worker_{0}".format(labels[num]),
+                    self._prefix + "worker_{0}_{1}".format(worker[0],labels[num]),
                     "Hashrate ({0})".format(documentation[num]),
                     value, **ids))
 
